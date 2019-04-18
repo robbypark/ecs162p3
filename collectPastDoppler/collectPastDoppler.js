@@ -44,7 +44,7 @@ function getTenImages() {
 		newImage = tryToGetImage(dateObj);
 		dateObj.setMinutes( dateObj.getMinutes()-1 ); // back in time one minute
 	}
-
+	console.log(imageArray);
 }
 
 getTenImages();

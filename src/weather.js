@@ -93,16 +93,17 @@ function updateUI(){
     let current = object.list[0];
     let hourlyList = object.list.slice(1, 6);
     console.log(current);
-    updateCurrentUI(current);
+    console.log(hourlyList);
+    currentUI(current);
+    hourlyUI(hourlyList);
 }
 
-function updateCurrentUI(current){
+function currentUI(current){
     let currentTime = document.getElementById("currentTime");
     let currentIcon = document.getElementById("currentIcon");
     let currentTemp = document.getElementById("currentTemp");
 
     let date = new Date(current.dt * 1000);
-    console.log();
     let hours = date.getHours();
     let suffix = hours >= 12 ? "PM" : "AM";
     hours = ((hours + 11) % 12 + 1);
@@ -110,6 +111,41 @@ function updateCurrentUI(current){
     currentIcon.src = "../assets/" + current.weather[0].icon + ".svg";
     currentTemp.innerHTML = parseInt(current.main.temp);
 
+}
+
+function hourlyUI(hourlyList){
+    let hourlyWeather = document.getElementById("hourlyWeather");
+
+    // remove all children
+    while(hourlyWeather.firstChild){
+        hourlyWeather.firstChild.remove();
+    }
+
+    // create each hourly div
+    hourlyList.forEach(hourly =>{
+        let date = new Date(hourly.dt * 1000);
+        let hours = date.getHours();
+        let suffix = hours >= 12 ? "PM" : "AM";
+        hours = ((hours + 11) % 12 + 1);
+
+        let div = document.createElement("div");
+        div.classList.add("hourly");
+
+        let time = document.createElement("p");
+        time.innerHTML = hours + ":00 " + suffix;
+        div.appendChild(time);
+
+        let icon = document.createElement("img");
+        icon.classList.add("hourlyIcon");
+        icon.src = "../assets/" + hourly.weather[0].icon + ".svg";
+        div.appendChild(icon);
+
+        let temp = document.createElement("p");
+        temp.innerHTML = parseInt(hourly.main.temp);
+        div.appendChild(temp);
+
+        hourlyWeather.appendChild(div);
+    });
 }
 
 
