@@ -5,3 +5,11 @@
 .hourlyIcon {
     width: 100px;
 }
+#dopplerContainer {
+    display: flex;
+}
+
+
+#cities {
+    position: absolute;
+}

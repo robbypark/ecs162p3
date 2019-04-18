@@ -28,14 +28,12 @@ function makeCorsRequest(inputStr) {
         let responseStr = xhr.responseText;  // get the JSON string
         object = JSON.parse(responseStr);
         // console.log(JSON.stringify(object, undefined, 2));
-        if(object.cod === "404"){
+        if (object.cod === "404") {
             alert('City not found.');
         }
-
         // else if(outOfRange()){
         //     alert('City not found.');
         // }
-
         else {
             // update ui
             updateUI();
@@ -58,7 +56,7 @@ function createCORSRequest(method, url) {
 }
 
 // check if city is out of 150 mi range
-function outOfRange(){
+function outOfRange() {
     let lat = object.city.coord.lat;
     let lon = object.city.coord.lon;
     console.log(lat + " " + lon);
@@ -72,24 +70,25 @@ function outOfRange(){
 function distKmTwoCoords(lat1, lon1, lat2, lon2) {
     let earthRadiusKm = 6371;
 
-    let dLat = degreesToRadians(lat2-lat1);
-    let dLon = degreesToRadians(lon2-lon1);
+    let dLat = degreesToRadians(lat2 - lat1);
+    let dLon = degreesToRadians(lon2 - lon1);
 
     lat1 = degreesToRadians(lat1);
     lat2 = degreesToRadians(lat2);
 
-    let a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-        Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
-    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    let a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
+    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     return earthRadiusKm * c;
 }
 
 function degreesToRadians(degrees) {
     return degrees * Math.PI / 180;
 }
+
 /* end src */
 
-function updateUI(){
+function updateUI() {
     let current = object.list[0];
     let hourlyList = object.list.slice(1, 6);
     console.log(current);
@@ -98,7 +97,7 @@ function updateUI(){
     hourlyUI(hourlyList);
 }
 
-function currentUI(current){
+function currentUI(current) {
     let currentTime = document.getElementById("currentTime");
     let currentIcon = document.getElementById("currentIcon");
     let currentTemp = document.getElementById("currentTemp");
@@ -113,16 +112,16 @@ function currentUI(current){
 
 }
 
-function hourlyUI(hourlyList){
+function hourlyUI(hourlyList) {
     let hourlyWeather = document.getElementById("hourlyWeather");
 
     // remove all children
-    while(hourlyWeather.firstChild){
+    while (hourlyWeather.firstChild) {
         hourlyWeather.firstChild.remove();
     }
 
     // create each hourly div
-    hourlyList.forEach(hourly =>{
+    hourlyList.forEach(hourly => {
         let date = new Date(hourly.dt * 1000);
         let hours = date.getHours();
         let suffix = hours >= 12 ? "PM" : "AM";
