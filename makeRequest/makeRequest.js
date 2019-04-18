@@ -12,7 +12,7 @@ function createCORSRequest(method, url) {
 // Make the actual CORS request.
 function makeCorsRequest() {
 
-   let url = "http://api.openweathermap.org/data/2.5/forecast/hourly?q=Davis,CA,US&units=imperial&APPID=xxx"
+   let url = "http://api.openweathermap.org/data/2.5/forecast/hourly?q=Davis,CA,US&units=imperial&APPID=ee8175bedcc610f1b1671a5c2807a5c4";
 
   let xhr = createCORSRequest('GET', url);
 
