@@ -10,5 +10,19 @@
 </head>
 <body>
 
+<h1>Local Weather Six Hour Forecast</h1>
+
+<div>
+    <label>Forecast for <input id="userInput" type="text" value="Davis, CA"></label>
+    <button onclick="printUserInput()">Submit</button>
+</div>
+
+<div id="currentWeather">
+    <p id="currentTime">0:00 pm</p>
+    <img id="currentIcon" src="../assets/clearsky.svg">
+    <p id="currentTemp">105</p>
+</div>
+
+<script src="weather.js"></script>
 </body>
 </html>
