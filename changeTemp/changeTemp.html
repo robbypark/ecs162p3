@@ -1,0 +1,28 @@
+<!--
+Demo of changing displayed data
+-->
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>demo changing display</title>
+	<link rel="stylesheet" type="text/css" href="reset.css"> 
+	<link rel="stylesheet" type="text/css" href="weather.css"></link>
+
+</head>
+
+<body>
+
+<div id="conditionsDiv">
+	<p id="city">Davis</p>
+	<img src="../../weather/weatherDesign/assets/clearsky.svg" id="iconSVG">
+	<p id="tempP">71&#x00B0;</p>
+</div>
+<div onclick="change()" id="buttonDiv">
+	<p >Change</p>
+</div>
+
+<!-- execute the Javascript for this page --> 
+<script src="changeTemp.js"></script>
+</body>
