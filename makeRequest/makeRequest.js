@@ -1,5 +1,7 @@
 "strict mode";
 
+let object;
+
 // Do a CORS request to get Davis weather hourly forecast
 
 // Create the XHR object.
@@ -25,12 +27,15 @@ function makeCorsRequest() {
   // Load some functions into response handlers.
   xhr.onload = function() {
       let responseStr = xhr.responseText;  // get the JSON string 
-      let object = JSON.parse(responseStr);  // turn it into an object
+      object = JSON.parse(responseStr);  // turn it into an object
       console.log(JSON.stringify(object, undefined, 2));  // print it out as a string, nicely formatted
+      // if match, update ui
+      // else, not found msg
   };
 
   xhr.onerror = function() {
     alert('Woops, there was an error making the request.');
+    // not found msg
   };
 
   // Actually send request to server
