@@ -4,5 +4,5 @@ function change () {
 	city.textContent = "Auburn";
 
 	let icon = document.getElementById("iconSVG");
-	icon.src = "../assets/fewclouds-day.svg";
+	icon.src = "../assets/02d.svg";
 }

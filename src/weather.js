@@ -30,10 +30,15 @@ function makeCorsRequest(inputStr) {
         // console.log(JSON.stringify(object, undefined, 2));
         if(object.cod === "404"){
             alert('City not found.');
-        } else if(outOfRange()){
-            alert('City not found.');
-        } else {
+        }
+
+        // else if(outOfRange()){
+        //     alert('City not found.');
+        // }
+
+        else {
             // update ui
+            updateUI();
         }
     };
 
@@ -54,8 +59,8 @@ function createCORSRequest(method, url) {
 
 // check if city is out of 150 mi range
 function outOfRange(){
-    let lat = parseFloat(object.city.coord.lat);
-    let lon = parseFloat(object.city.coord.lon);
+    let lat = object.city.coord.lat;
+    let lon = object.city.coord.lon;
     console.log(lat + " " + lon);
     let distMi = 0.62137119224 * distKmTwoCoords(lat, lon, 38.5816, -121.4944); // SAC coords
     console.log(distMi + " mi");
@@ -81,6 +86,30 @@ function distKmTwoCoords(lat1, lon1, lat2, lon2) {
 
 function degreesToRadians(degrees) {
     return degrees * Math.PI / 180;
+}
+/* end src */
+
+function updateUI(){
+    let current = object.list[0];
+    let hourlyList = object.list.slice(1, 6);
+    console.log(current);
+    updateCurrentUI(current);
+}
+
+function updateCurrentUI(current){
+    let currentTime = document.getElementById("currentTime");
+    let currentIcon = document.getElementById("currentIcon");
+    let currentTemp = document.getElementById("currentTemp");
+
+    let date = new Date(current.dt * 1000);
+    console.log();
+    let hours = date.getHours();
+    let suffix = hours >= 12 ? "PM" : "AM";
+    hours = ((hours + 11) % 12 + 1);
+    currentTime.innerHTML = hours + suffix;
+    currentIcon.src = "../assets/" + current.weather[0].icon + ".svg";
+    currentTemp.innerHTML = parseInt(current.main.temp);
+
 }
 
 
