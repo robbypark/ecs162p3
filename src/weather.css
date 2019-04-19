@@ -5,11 +5,29 @@
 .hourlyIcon {
     width: 100px;
 }
-#dopplerContainer {
+
+#doppler {
     display: flex;
+    background-color: blue;
 }
 
+/*#doppler img {*/
+/*    max-width: 100%;*/
+/*    height: auto;*/
+/*}*/
+
+.dopplerImg {
+    position: absolute;
+}
+
+#container {
+    position: absolute;
+}
 
 #cities {
     position: absolute;
+}
+
+.hide {
+    display: none;
 }

@@ -6,11 +6,14 @@ let count = 0;          // global var
 function addToArray(newImage) {
 	if (count < 10) {
 		newImage.id = "doppler_"+count;
-		newImage.style.display = "none";
+		newImage.classList.add("dopplerImg");
+		// newImage.style.display = "none";
 		imageArray.push(newImage);
 		count++;
 		if (count >= 10) {
 			console.log("Got 10 doppler images");
+			addToContainer();
+			animateDoppler();
 		}
 	}
 }
@@ -44,7 +47,13 @@ function getTenImages() {
 		newImage = tryToGetImage(dateObj);
 		dateObj.setMinutes( dateObj.getMinutes()-1 ); // back in time one minute
 	}
-	console.log(imageArray);
+}
+
+function addToContainer(){
+	let container = document.getElementById("container");
+	for(let i = 0; i < imageArray.length; i++){
+		container.appendChild(imageArray[i]);
+	}
 }
 
 getTenImages();
