@@ -1,8 +1,6 @@
 "strict mode";
 
 let object;
-
-
 let imageArray = [];  // global variable to hold stack of images for animation
 let count = 0;          // global var
 let currentDoppler;
@@ -152,7 +150,6 @@ function distKmTwoCoords(lat1, lon1, lat2, lon2) {
 function degreesToRadians(degrees) {
     return degrees * Math.PI / 180;
 }
-
 /* end src */
 
 function updateUI() {
@@ -191,7 +188,7 @@ function hourlyUI(hourlyList) {
     hourlyList.forEach(hourly => {
         let date = new Date(hourly.dt * 1000);
         let hours = date.getHours();
-        let suffix = hours >= 12 ? "PM" : "AM";
+        let suffix = hours >= 12 ? "pm" : "am";
         hours = ((hours + 11) % 12 + 1);
 
         let div = document.createElement("div");
