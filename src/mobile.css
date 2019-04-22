@@ -1,6 +1,6 @@
 body, html {
     height: 200vh;
-    overflow: initial;
+    /*overflow: initial;*/
 }
 
 h1 {
@@ -63,8 +63,11 @@ h2 {
     filter: invert(100%);
 }
 
-#arrow2{
+#arrowCtn2 {
     align-self: center;
+}
+
+#arrow2{
     display: initial;
     width: 50px;
 }
@@ -73,13 +76,8 @@ br {
     display: initial;
 }
 
-/*input {*/
-/*    margin-top: 20px;*/
-/*}*/
-
 button {
     margin: 0;
-    /*margin-top: 20px;*/
     padding: 10px;
 }
 
@@ -87,7 +85,6 @@ button {
     align-self: stretch;
     display: flex;
     flex-direction: row;
-    /*justify-content: stretch;*/
     flex-wrap: wrap;
 }
 #enterCity p {

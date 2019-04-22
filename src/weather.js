@@ -100,11 +100,13 @@ function makeCorsRequest(inputStr) {
         // console.log(JSON.stringify(object, undefined, 2));
         if (object.cod === "404") {
             alert('City not found.');
-        } else if (outOfRange()) {
-            alert('City not found.');
         } else {
-            // update ui
-            updateUI();
+            let distance = range();
+            if(distance > 150){
+                alert('City out of range: ' + parseInt(distance) + ' mi');
+            } else {
+                updateUI();
+            }
         }
     };
 
@@ -124,14 +126,14 @@ function createCORSRequest(method, url) {
 }
 
 // check if city is out of 150 mi range
-function outOfRange() {
+function range() {
     let lat = object.city.coord.lat;
     let lon = object.city.coord.lon;
     console.log(lat + " " + lon);
     let distMi = 0.62137119224 * distKmTwoCoords(lat, lon, 38.5816, -121.4944); // SAC coords
     console.log(distMi + " mi");
 
-    return distMi > 150.0;
+    return distMi;
 }
 
 /*src: https://stackoverflow.com/questions/365826/calculate-distance-between-2-gps-coordinates*/
