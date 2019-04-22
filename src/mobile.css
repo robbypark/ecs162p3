@@ -1,0 +1,83 @@
+body, html {
+    height: 200vh;
+    overflow: initial;
+}
+
+h1 {
+    font-size: 32pt;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 16pt;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#doppler {
+    display: none;
+}
+
+#top {
+    flex-basis: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: unset;
+    align-items: center;
+    background-color: lightseagreen;
+}
+
+#topContent {
+    margin-top: 0;
+    flex-basis: initial;
+}
+
+#hourlyWeather {
+    flex-direction: column;
+    background-color: lightpink;
+}
+
+#bottom {
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+.hourly {
+    flex-direction: row;
+    border-right: 0;
+    border-bottom: 1px solid gray;
+}
+
+#currentIcon {
+    height: 250px;
+    width: auto;
+}
+
+#arrow{
+    display: initial;
+    width: 50px;
+}
+
+#arrow2{
+    align-self: center;
+    display: initial;
+    width: 50px;
+    transform: scaleY(-1);
+}
+
+br {
+    display: initial;
+}
+
+/*input {*/
+/*    margin-top: 20px;*/
+/*}*/
+
+button {
+    margin-top: 20px;
+}
+
+#enterCity{
+    align-self: stretch;
+}

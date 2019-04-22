@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="desktop.css">
     <link rel="stylesheet" type="text/css" href="tablet.css" media="(max-width: 1500px)">
-    <link rel="stylesheet" type="text/css" href="mobile.css" media="(max-width: 1000px)">
+    <link rel="stylesheet" type="text/css" href="mobile.css" media="(max-width: 900px)">
 
 
 </head>
@@ -21,7 +21,7 @@
         <h2>Northern California with doppler radar</h2>
 
         <div id="enterCity">
-            <label>Forecast for <input id="userInput" type="text" value="Davis, CA"></label>
+            <label>Forecast for <br><input id="userInput" type="text" value="Davis, CA"></label>
             <button onclick="update()">Submit</button>
         </div>
     </div>
@@ -31,7 +31,7 @@
             <p>current</p>
             <p id="currentTime">0PM</p>
         </div>
-        <div id="currImgCtn">        <img id="currentIcon" src="../assets/01d.svg">
+        <div id="currImgCtn"><img id="currentIcon" src="../assets/01d.svg">
         </div>
         <p id="currentTemp">999</p>
     </div>
@@ -42,10 +42,14 @@
         <img id="cities" src="../assets/DAX_City_Short.gif">
     </div>
 
+    <img id="arrow" src="../assets/down-arrow.svg">
+
 </div>
 
-
-<div id="hourlyWeather"></div>
+<div id="bottom">
+    <img id="arrow2" src="../assets/down-arrow.svg">
+    <div id="hourlyWeather"></div>
+</div>
 
 
 <script src="weather.js"></script>

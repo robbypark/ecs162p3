@@ -1,0 +1,142 @@
+body, html {
+    height: 100vh;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 48pt;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 33pt;
+    margin-bottom: 25px;
+}
+
+label {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 22pt;
+}
+
+button {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16pt;
+}
+
+#top {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: lightgreen;
+    flex-basis: 66.67%;
+    align-content: space-between;
+    padding: 0 50px;
+}
+
+#topContent {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+#hourlyWeather {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+#bottom {
+    display: flex;
+    flex-basis: 33.33%;
+    background-color: limegreen;
+    align-items: stretch;
+}
+
+.hourly {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-grow: 1;
+    border-right: 1px solid gray;
+}
+
+.hourly p:first-child {
+    font-size: 25pt;
+}
+.hourly p:last-child {
+    font-size: 75pt;
+}
+
+.hourlyIcon {
+    width: 100px;
+}
+
+#currentIcon {
+    width: 150px;
+}
+
+#currentWeather {
+    background-color: lightskyblue;
+    display: flex;
+    flex-direction: row;
+    /*justify-content: center;*/
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#currText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 20px;
+}
+
+#currentWeather div p {
+    font-size: 35pt;
+}
+
+#currentTemp {
+    margin-left: 20px;
+    font-size: 85pt;
+}
+
+#doppler {
+    position: relative;
+    background-color: lightseagreen;
+    flex-basis: 100%;
+    min-width: 400px;
+    margin-top: 50px;
+}
+
+#doppler img {
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.hide {
+    display: none;
+}
+
+#arrow{
+    display: none;
+}
+
+#arrow2 {
+    display: none;
+}
+
+br {
+    display: none;
+}
