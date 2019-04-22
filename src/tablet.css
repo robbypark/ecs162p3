@@ -1,6 +1,5 @@
 h1 {
     font-size: 38pt;
-    background-color: blue;
     margin-bottom: 10px;
 }
 
@@ -10,7 +9,6 @@ h2 {
 }
 
 #enterCity {
-    background-color: linen;
 }
 
 #top {
@@ -21,7 +19,6 @@ h2 {
 }
 
 #topContent {
-    background-color: lightpink;
     flex-basis: 100%;
     align-items: center;
     margin-top: 25px;
@@ -29,7 +26,7 @@ h2 {
 }
 
 #currentWeather {
-    /*flex-basis: 20%;*/
+    flex-basis: 50%;
     flex-grow: 0;
     margin: 0;
     flex-wrap: wrap;
@@ -49,12 +46,12 @@ h2 {
 }
 
 #currText {
-    border-right: 1px solid black;
+    border-right: 2px solid black;
     flex-wrap: wrap;
 }
 
 #doppler {
-    flex-basis: 20%;
+    flex-basis: 40%;
     min-width: 300px;
     margin-top: 10px;
 }

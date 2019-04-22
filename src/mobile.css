@@ -7,6 +7,7 @@ h1 {
     font-size: 32pt;
     text-align: center;
     margin-bottom: 15px;
+    margin-top: 30px;
 }
 
 h2 {
@@ -26,6 +27,7 @@ h2 {
     align-content: unset;
     align-items: center;
     background-color: lightseagreen;
+    flex-wrap: nowrap;
 }
 
 #topContent {
@@ -35,12 +37,12 @@ h2 {
 
 #hourlyWeather {
     flex-direction: column;
-    background-color: lightpink;
 }
 
 #bottom {
     flex-direction: column;
     flex-basis: 100%;
+    box-shadow: initial;
 }
 
 .hourly {
@@ -57,13 +59,14 @@ h2 {
 #arrow{
     display: initial;
     width: 50px;
+    transform: scaleY(-1);
+    filter: invert(100%);
 }
 
 #arrow2{
     align-self: center;
     display: initial;
     width: 50px;
-    transform: scaleY(-1);
 }
 
 br {
@@ -75,9 +78,30 @@ br {
 /*}*/
 
 button {
-    margin-top: 20px;
+    margin: 0;
+    /*margin-top: 20px;*/
+    padding: 10px;
 }
 
 #enterCity{
     align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    /*justify-content: stretch;*/
+    flex-wrap: wrap;
+}
+#enterCity p {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+}
+
+input {
+    margin: 0;
+    flex-grow: 1;
+    width: 50px;
+}
+
+label {
+    flex-grow: 1;
+    display: flex;
 }

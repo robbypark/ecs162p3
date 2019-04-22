@@ -5,6 +5,8 @@ let imageArray = [];  // global variable to hold stack of images for animation
 let count = 0;          // global var
 let currentDoppler;
 
+/* DOPPLER STUFF */
+
 function addToArray(newImage) {
     if (count < 10) {
         newImage.id = "doppler_" + count;
@@ -67,6 +69,9 @@ function addToContainer() {
     }
 }
 
+/* WEATHER STUFF */
+
+// updates current and hourly weather UI
 function update() {
     let input = document.getElementById("userInput");
     let inputStr = input.value;
@@ -95,11 +100,9 @@ function makeCorsRequest(inputStr) {
         // console.log(JSON.stringify(object, undefined, 2));
         if (object.cod === "404") {
             alert('City not found.');
-        }
-        // else if(outOfRange()){
-        //     alert('City not found.');
-        // }
-        else {
+        } else if (outOfRange()) {
+            alert('City not found.');
+        } else {
             // update ui
             updateUI();
         }
@@ -150,6 +153,7 @@ function distKmTwoCoords(lat1, lon1, lat2, lon2) {
 function degreesToRadians(degrees) {
     return degrees * Math.PI / 180;
 }
+
 /* end src */
 
 function updateUI() {
@@ -172,7 +176,7 @@ function currentUI(current) {
     hours = ((hours + 11) % 12 + 1);
     currentTime.innerHTML = hours + suffix;
     currentIcon.src = "../assets/" + current.weather[0].icon + ".svg";
-    currentTemp.innerHTML = parseInt(current.main.temp);
+    currentTemp.innerHTML = parseInt(current.main.temp) + '&deg;';
 
 }
 
@@ -204,13 +208,14 @@ function hourlyUI(hourlyList) {
         div.appendChild(icon);
 
         let temp = document.createElement("p");
-        temp.innerHTML = parseInt(hourly.main.temp);
+            temp.innerHTML = parseInt(hourly.main.temp) + '&deg;';
         div.appendChild(temp);
 
         hourlyWeather.appendChild(div);
     });
 }
 
+/* JS STARTING CODE */
 
 // Do a CORS request to get Davis weather hourly forecast
 // run this code to make request when this script file gets executed
