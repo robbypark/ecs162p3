@@ -129,9 +129,9 @@ function createCORSRequest(method, url) {
 function range() {
     let lat = object.city.coord.lat;
     let lon = object.city.coord.lon;
-    console.log(lat + " " + lon);
+    // console.log(lat + " " + lon);
     let distMi = 0.62137119224 * distKmTwoCoords(lat, lon, 38.5816, -121.4944); // SAC coords
-    console.log(distMi + " mi");
+    // console.log(distMi + " mi");
 
     return distMi;
 }
@@ -161,8 +161,8 @@ function degreesToRadians(degrees) {
 function updateUI() {
     let current = object.list[0];
     let hourlyList = object.list.slice(1, 6);
-    console.log(current);
-    console.log(hourlyList);
+    // console.log(current);
+    // console.log(hourlyList);
     currentUI(current);
     hourlyUI(hourlyList);
 }
